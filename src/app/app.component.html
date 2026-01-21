@@ -1,0 +1,58 @@
+<div class="container-fluid vh-100 d-flex align-items-center justify-content-center bg-black">
+  <div class="row calculator-container shadow-2xl rounded-5 overflow-hidden">
+    
+    <div class="col-md-4 history-pane p-4 d-flex flex-column">
+      <div class="d-flex align-items-center mb-4 text-secondary">
+        <i class="bi bi-clock-history me-2"></i>
+        <h6 class="text-uppercase fw-bold mb-0" style="letter-spacing: 1px;">History</h6>
+      </div>
+      
+      <div class="history-list flex-grow-1">
+        <div *ngFor="let item of history" class="history-item mb-4 text-end pe-2">
+          <div class="text-secondary smaller mb-1">{{ item.date }}</div>
+          <div class="expression text-white-50">{{ item.expression }}</div>
+          <div class="result h4 fw-bold text-white">{{ item.result }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8 calculator-body p-4">
+      <div class="display text-end mb-5">
+        <div class="previous-calc text-secondary small mb-1" style="height: 20px;">
+          {{ currentExpression }}
+        </div>
+        <div class="current-value display-3 fw-light text-white">
+          {{ displayValue }}
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-3"><button (click)="clear()" class="btn btn-action w-100 py-3 rounded-pill">AC</button></div>
+        <div class="col-3"><button (click)="onKeyClick('(')" class="btn btn-util w-100 py-3 rounded-pill">( )</button></div>
+        <div class="col-3"><button (click)="onKeyClick('%')" class="btn btn-util w-100 py-3 rounded-pill">%</button></div>
+        <div class="col-3"><button (click)="onKeyClick('÷')" class="btn btn-action w-100 py-3 rounded-pill">÷</button></div>
+        
+        <div class="col-3"><button (click)="onKeyClick('7')" class="btn btn-number w-100 py-3 rounded-pill">7</button></div>
+        <div class="col-3"><button (click)="onKeyClick('8')" class="btn btn-number w-100 py-3 rounded-pill">8</button></div>
+        <div class="col-3"><button (click)="onKeyClick('9')" class="btn btn-number w-100 py-3 rounded-pill">9</button></div>
+        <div class="col-3"><button (click)="onKeyClick('×')" class="btn btn-action w-100 py-3 rounded-pill">×</button></div>
+
+        <div class="col-3"><button (click)="onKeyClick('4')" class="btn btn-number w-100 py-3 rounded-pill">4</button></div>
+        <div class="col-3"><button (click)="onKeyClick('5')" class="btn btn-number w-100 py-3 rounded-pill">5</button></div>
+        <div class="col-3"><button (click)="onKeyClick('6')" class="btn btn-number w-100 py-3 rounded-pill">6</button></div>
+        <div class="col-3"><button (click)="onKeyClick('-')" class="btn btn-action w-100 py-3 rounded-pill">-</button></div>
+
+        <div class="col-3"><button (click)="onKeyClick('1')" class="btn btn-number w-100 py-3 rounded-pill">1</button></div>
+        <div class="col-3"><button (click)="onKeyClick('2')" class="btn btn-number w-100 py-3 rounded-pill">2</button></div>
+        <div class="col-3"><button (click)="onKeyClick('3')" class="btn btn-number w-100 py-3 rounded-pill">3</button></div>
+        <div class="col-3"><button (click)="onKeyClick('+')" class="btn btn-action w-100 py-3 rounded-pill">+</button></div>
+        
+        <div class="col-3"><button (click)="onKeyClick('0')" class="btn btn-number w-100 py-3 rounded-pill">0</button></div>
+        <div class="col-3"><button (click)="onKeyClick('.')" class="btn btn-number w-100 py-3 rounded-pill">.</button></div>
+        <div class="col-3"><button (click)="onKeyClick('Backspace')" class="btn btn-number w-100 py-3 rounded-pill"><i class="bi bi-backspace"></i></button></div>
+        <div class="col-3"><button (click)="calculate()" class="btn btn-equals w-100 py-3 rounded-pill">=</button></div>
+      </div>
+    </div>
+
+  </div>
+</div>

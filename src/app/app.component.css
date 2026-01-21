@@ -1,0 +1,72 @@
+/* src/app/app.component.css */
+.calculator-container {
+  width: 950px;
+  height: 600px;
+  border: 1px solid #333;
+}
+
+/* History Pane with Fade Effect */
+.history-pane {
+  background: linear-gradient(to right, #2c2f33, #23272a);
+  border-right: 1px solid #333;
+  height: 600px; /* Matching the container height */
+  display: flex;
+  flex-direction: column;
+}
+
+.calculator-body {
+  background-color: #23272a; /* Matches the end of the gradient */
+}
+
+/* Button Theming based on your image */
+.btn-action {
+  background-color: #5865f2; /* Blueish color */
+  color: white;
+  border: none;
+}
+
+.btn-util {
+  background-color: #4f545c; /* Greyish color */
+  color: white;
+  border: none;
+}
+
+.btn-number {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #4f545c;
+}
+
+.btn-equals {
+  background-color: #7289da; /* Lighter blue */
+  color: white;
+  border: none;
+}
+
+/* Hover effects for visual feedback */
+.btn:hover {
+  filter: brightness(1.2);
+  transition: 0.2s;
+}
+
+.smaller { font-size: 0.75rem; }
+
+.history-list {
+  flex-grow: 1;
+  overflow-y: auto; /* Requirement: Becomes scrollable */
+  padding-right: 10px;
+}
+
+/* Optional: Custom scrollbar for Chrome/Safari */
+.history-list::-webkit-scrollbar {
+  width: 6px;
+}
+.history-list::-webkit-scrollbar-thumb {
+  background-color: #4f545c;
+  border-radius: 10px;
+}
+
+.history-item {
+  min-height: 80px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
